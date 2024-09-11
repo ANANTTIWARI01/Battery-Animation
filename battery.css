@@ -11,6 +11,8 @@
    margin: 9rem auto;
    border:5px solid #000;
    /* position: relative; */
+   position: relative;
+
 
 }
 
@@ -22,22 +24,33 @@
    height: 100px;
    width: 300px;
    animation-name: batterycharging;
-   animation-duration: 4s;
-   animation-timing-function: ease-in-out;
-   animation-iteration-count: 1;
+   animation-duration: 7s;
+   animation-timing-function: linear forwards;
+   animation-iteration-count: infinite;
+   animation-delay: 1s;
    
 }
 
+.charging::after{
+    content: " ";
+     position: absolute;
+     width: 30px;
+     height: 20px;
+     top: 40px ;
+     right: -35px;
+     background-color: brown;
+}
 
-.battery:hover .charger{
+
+/* .battery:hover .charger{
     /* animation-name: batterycharging;
     animation-duration: 4s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
-     */
+     
      width: 100%;
    
-}
+} */
 
 
 @keyframes batterycharging {
@@ -49,23 +62,27 @@ width: 0;
 25%{
     /* position: absolute;
     left: 25%; */
-width: 75px;
+width: 25%;
 }
 50%{
     /* position: absolute;
     left: 50%; */
-    width: 120px;
+    width: 50%;
 }
 75%{
     /* position: absolute;
     left: 75%; */
-    width: 220px;
+    width: 75%;
 }
-100%{
+91%{
     /* position: absolute;
     left: 100%; */
-    width:300px ;
+    width:98% ;
+    animation-timing-function: step-end;
 }
-    
+/* 100%{
+    width: 100%;
+}
+     */
     
 }
